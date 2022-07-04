@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+// Variables
+
+// Colors
+
+// Primary
+$color-primary-Orange: hsl(26, 100%, 55%);
+$color-primary-Pale-orange: hsl(25, 100%, 94%);
+
+// Neutral
+$color-neutral-Very-dark-blue: hsl(220, 13%, 13%);
+$color-neutral-Dark-grayish-blue: hsl(219, 9%, 45%);
+$color-neutral-Grayish-blue: hsl(220, 14%, 75%);
+$color-neutral-Light-grayish-blue: hsl(223, 64%, 98%);
+$color-neutral-White: hsl(0, 0%, 100%);
+$color-neutral-Black: hsl(0, 0%, 0%); //(with 75% opacity for lightbox background)
+
+// Typography
+$font-size-default: 16px;
+$font-weight-default: 400;
+$font-family-default: 'Kumbh Sans', sans-serif;
+
+// Base
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: auto;
+  color: $color-neutral-Black;
+  background: $color-neutral-White;
+  position: relative;
+}
