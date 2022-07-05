@@ -2,7 +2,7 @@
   <div class="product">
     <div class="row">
       <div class="col gallery">
-        
+        <ImageGallery :photos="product.photos" />
       </div>
       <div class="col summary">
         <div class="summary__brand">{{ product.brand }}</div>
@@ -27,5 +27,6 @@
 </template>
 
 <script setup>
+import ImageGallery from './ImageGallery.vue';
 defineProps(['product'])
 </script>
