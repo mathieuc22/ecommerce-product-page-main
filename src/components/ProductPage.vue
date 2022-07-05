@@ -14,12 +14,12 @@
           <span class="price__was">{{ product.price.was }}</span>
         </div>
         <div class="quantity">
-          <span class="quantity__btn">-</span>
+          <span class="quantity__btn"><img src="../assets/images/icon-minus.svg" alt="icon minus"></span>
           <span class="quantity__value">0</span>
-          <span class="quantity__btn">+</span>
+          <span class="quantity__btn"><img src="../assets/images/icon-plus.svg" alt="icon plus"></span>
         </div>
         <div class="cart">
-          <button class="btn">Add to cart</button>
+          <button class="btn"><img src="../assets/images/icon-cart.svg" alt="icon cart"> Add to cart</button>
         </div>
       </div>
     </div>
