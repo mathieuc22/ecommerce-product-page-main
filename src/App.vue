@@ -1,13 +1,21 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <ProductPage :product="product" />
 </template>
+
+<script setup>
+import ProductPage from './components/ProductPage.vue';
+
+const product = {
+  brand: "Sneaker Company",
+  name: "Fall Limited Edition Sneakers",
+  description: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+  price: {
+    current: "$125.00",
+    was: "$250.00"
+  }
+}
+
+</script>
 
 <style lang="scss">
 #app {
