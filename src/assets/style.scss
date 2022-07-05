@@ -47,11 +47,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .col {
   flex: 1;
-  padding: 48px;
+  padding: 47px;
   & img {
     max-width: 100%;
   }
