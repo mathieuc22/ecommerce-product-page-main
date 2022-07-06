@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/interactive-rating-component-main/',
+  base: '/ecommerce-product-page-main/',
   plugins: [vue()],
   css: {
     preprocessorOptions: {
