@@ -35,6 +35,8 @@ function getImgUrl(url) {
 .gallery {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   gap: 20px;
   height: 100%;
@@ -42,27 +44,30 @@ function getImgUrl(url) {
 
   & img {
     display: block;
-    height: 100%;
-    object-fit: cover;
   }
 
   &__image {
-    overflow: hidden;
     display: flex;
     justify-content: center;
-
+    flex-direction: column;
+    position: relative;
+    max-height: 61vh;
+    
     & img {
+      display: block;
+      height: 100%;
+      width: 100%;
       object-fit: contain;
       border-radius: 10px;
     }
   }
 
   &__thumbnails {
-    width: 100%;
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
   }
 
   &__thumbnail {
@@ -70,7 +75,6 @@ function getImgUrl(url) {
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    margin: 2px;
     max-height: 92px;
     max-width: 92px;
   }
