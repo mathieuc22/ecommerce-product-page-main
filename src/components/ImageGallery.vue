@@ -51,8 +51,8 @@ function getImgUrl(url) {
     justify-content: center;
     flex-direction: column;
     position: relative;
-    max-height: 61vh;
-    
+    height: 61vh;
+
     & img {
       display: block;
       height: 100%;
@@ -67,7 +67,7 @@ function getImgUrl(url) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 450px;
+    width: 445px;
   }
 
   &__thumbnail {
@@ -83,7 +83,6 @@ function getImgUrl(url) {
 
 .selected {
   border: 2px solid $color-primary-Orange;
-  margin: 0px;
 
   & img {
     filter: opacity(0.3);
