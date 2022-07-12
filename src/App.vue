@@ -1,9 +1,11 @@
 <template>
+  <AppHeader />
   <ProductPage :product="product" />
 </template>
 
 <script setup>
 import ProductPage from './components/ProductPage.vue';
+import AppHeader from './components/AppHeader.vue';
 
 const product = {
   brand: "Sneaker Company",
