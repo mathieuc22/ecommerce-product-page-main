@@ -1,19 +1,20 @@
 <template>
 
+
     <div class="modal">
         <div class="gallery">
             <div class="gallery__image">
                 <button class="button button--close" @click="$emit('close')">
-                    <img src="src/assets/images/icon-close.svg" alt="icon close">
+                    <svg width="24" height="24" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>
                 </button>
                 <img :src="getImgUrl(photos[selected].fullsize)" alt="Product image">
                 <button class="button button--round button--prev"
                     @click="selected > 0 ? selected-- : selected = photos.length - 1">
-                    <img src="src/assets/images/icon-previous.svg" alt="icon previous">
+                    <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
                 </button>
                 <button class="button button--round button--next"
                     @click="selected < photos.length - 1 ? selected++ : selected = 0">
-                    <img src="src/assets/images/icon-next.svg" alt="icon next">
+                    <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
                 </button>
             </div>
             <ul class="gallery__thumbnails">
@@ -62,10 +63,16 @@ function getImgUrl(url) {
     display: flex;
 
     &--close {
-        height: 24px;
-        width: 24px;
         top: -46px;
         right: 0;
+
+        & svg path {
+            fill: $color-neutral-White;
+        }
+
+        &:hover svg path {
+            fill: $color-primary-Orange;
+        }
     }
 
     &--round {
@@ -88,11 +95,19 @@ function getImgUrl(url) {
     &--prev {
         left: 0;
         transform: translateX(-50%);
+
+        &:hover svg path {
+            stroke: $color-primary-Orange;
+        }
     }
 
     &--next {
         right: 0;
         transform: translateX(50%);
+
+        &:hover svg path {
+            stroke: $color-primary-Orange;
+        }
     }
 }
 </style>
