@@ -18,23 +18,23 @@ const product = {
   photos: [
     {
       id: 0,
-      fullsize: "../assets/images/image-product-1.jpg",
-      thumbnail: "../assets/images/image-product-1-thumbnail.jpg"
+      fullsize: "image-product-1.jpg",
+      thumbnail: "image-product-1-thumbnail.jpg"
     },
     {
       id: 1,
-      fullsize: "../assets/images/image-product-2.jpg",
-      thumbnail: "../assets/images/image-product-2-thumbnail.jpg"
+      fullsize: "image-product-2.jpg",
+      thumbnail: "image-product-2-thumbnail.jpg"
     },
     {
       id: 2,
-      fullsize: "../assets/images/image-product-3.jpg",
-      thumbnail: "../assets/images/image-product-3-thumbnail.jpg"
+      fullsize: "image-product-3.jpg",
+      thumbnail: "image-product-3-thumbnail.jpg"
     },
     {
       id: 3,
-      fullsize: "../assets/images/image-product-4.jpg",
-      thumbnail: "../assets/images/image-product-4-thumbnail.jpg"
+      fullsize: "image-product-4.jpg",
+      thumbnail: "image-product-4-thumbnail.jpg"
     }
   ]
 }

@@ -2,12 +2,12 @@
 
   <div class="gallery">
     <div @click="lightbox = true" class="gallery__image">
-      <img :src="getImgUrl(photos[selected].fullsize)" alt="Product image">
+      <img :src="`img/${photos[selected].fullsize}`" alt="Product image">
     </div>
     <ul class="gallery__thumbnails">
       <li v-for="(photo, index) in photos" :key="index" class="gallery__thumbnail" @click="selected = index"
         :class="{ selected: selected === index }">
-        <img :src="getImgUrl(photo.thumbnail)" alt="Product thumbnail">
+        <img :src="`img/${photo.thumbnail}`" alt="Product thumbnail">
       </li>
     </ul>
   </div>
@@ -24,10 +24,6 @@ defineProps(['photos'])
 const selected = ref(0)
 
 const lightbox = ref(false)
-
-function getImgUrl(url) {
-  return new URL(url, import.meta.url).href
-}
 
 </script>
 
