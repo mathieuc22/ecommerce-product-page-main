@@ -28,7 +28,7 @@
                     <Cart v-if="cart" />
                 </div>
                 <div class="navlist__item">
-                    <img class="avatar" src="src/assets/images/image-avatar.png" alt="User avatar">
+                    <img class="avatar" src="../assets/images/image-avatar.png" alt="User avatar">
                 </div>
             </div>
         </nav>
