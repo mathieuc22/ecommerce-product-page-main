@@ -1,7 +1,7 @@
 <template>
 
   <div class="gallery">
-    <div class="gallery__image">
+    <div @click="modal = true" class="gallery__image">
       <img :src="getImgUrl(photos[selected].fullsize)" alt="Product image">
     </div>
     <ul class="gallery__thumbnails">
@@ -12,13 +12,18 @@
     </ul>
   </div>
 
+  <ImageGalleryModal :modal="modal" :photos="photos" @close="modal = false" />
+
 </template>
 
 <script setup>
+import ImageGalleryModal from './ImageGalleryModal.vue';
 import { ref } from 'vue';
 defineProps(['photos'])
 
 const selected = ref(0)
+
+const modal = ref(false)
 
 function getImgUrl(url) {
   return new URL(url, import.meta.url).href
@@ -26,38 +31,54 @@ function getImgUrl(url) {
 
 </script>
 
-<style lang="scss" scoped>
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+<style lang="scss">
 .gallery {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   gap: 20px;
+  height: 100%;
+  width: auto;
+
+  & img {
+    display: block;
+  }
 
   &__image {
-    border-radius: 10px;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    height: 61vh;
+
+    & img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
   }
 
   &__thumbnails {
-    width: 100%;
     list-style: none;
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 445px;
   }
 
   &__thumbnail {
-    border: 2px solid transparent;
+    background-color: $color-neutral-White;
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    max-height: 92px;
+    max-width: 92px;
   }
+
 }
 
 .selected {
