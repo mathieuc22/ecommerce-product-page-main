@@ -12,12 +12,12 @@
     </ul>
   </div>
 
-  <ImageGalleryModal :modal="modal" :photos="photos" @close="modal = false" />
+  <Lightbox :modal="modal" :photos="photos" @close="modal = false" />
 
 </template>
 
 <script setup>
-import ImageGalleryModal from './ImageGalleryModal.vue';
+import Lightbox from './Lightbox.vue';
 import { ref } from 'vue';
 defineProps(['photos'])
 
