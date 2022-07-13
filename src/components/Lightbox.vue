@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="modal" class="modal">
+    <div class="modal">
         <div class="gallery">
             <div class="gallery__image">
                 <button class="button button--close" @click="$emit('close')">
@@ -29,7 +29,7 @@
 
 <script setup>
 import { ref } from 'vue';
-defineProps(['photos', 'modal'])
+defineProps(['photos'])
 
 const selected = ref(0)
 

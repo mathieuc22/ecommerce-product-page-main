@@ -1,7 +1,7 @@
 <template>
 
   <div class="gallery">
-    <div @click="modal = true" class="gallery__image">
+    <div @click="lightbox = true" class="gallery__image">
       <img :src="getImgUrl(photos[selected].fullsize)" alt="Product image">
     </div>
     <ul class="gallery__thumbnails">
@@ -12,7 +12,7 @@
     </ul>
   </div>
 
-  <Lightbox :modal="modal" :photos="photos" @close="modal = false" />
+  <Lightbox v-if="lightbox" :photos="photos" @close="lightbox = false" />
 
 </template>
 
@@ -23,7 +23,7 @@ defineProps(['photos'])
 
 const selected = ref(0)
 
-const modal = ref(false)
+const lightbox = ref(false)
 
 function getImgUrl(url) {
   return new URL(url, import.meta.url).href
