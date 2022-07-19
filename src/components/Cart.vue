@@ -2,14 +2,15 @@
 
     <div class="cart">
         <h2 class="cart__title">Cart</h2>
-        <div class="cart__content">
+        <div v-if="!products.length" class="cart__content">
             <p>Your cart is empty.</p>
-        <ul>
+        </div>
+        <ul v-else>
             <li v-for="product in products" :key="product.id">
-                {{ product.name }} - {{ product.price }} x {{ product.quantity }}
+                <img :src="`img/${product.photo}`" alt="Product thumbnail">
+                {{ product.name }} - {{ product.price }} x {{ product.quantity }} - {{total}}
             </li>
         </ul>
-        </div>
     </div>
 
 
@@ -22,6 +23,7 @@ import { useStore } from 'vuex'
 
 const store = useStore()
 const products = computed(() => store.getters['cart/cartProducts'])
+const total = computed(() => store.getters['cart/cartTotalPrice'])
 
 </script>
 

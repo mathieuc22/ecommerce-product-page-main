@@ -18,6 +18,7 @@ const getters = {
         id: product.id,
         name: product.name,
         price: product.price.current,
+        photo: product.photos[0].thumbnail,
         quantity,
       };
     });
