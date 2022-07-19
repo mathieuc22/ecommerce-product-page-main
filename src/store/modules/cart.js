@@ -17,7 +17,7 @@ const getters = {
       return {
         id: product.id,
         name: product.name,
-        price: product.price,
+        price: product.price.current,
         quantity,
       };
     });
@@ -52,25 +52,25 @@ const actions = {
     commit("setCheckoutStatus", null);
     const cartItem = state.items.find((item) => item.id === product.id);
     if (!cartItem) {
-      commit("pushProductToCart", { id: product.id });
+      commit("pushProductToCart", { id: product.id, quantity: product.quantity });
     } else {
-      commit("incrementItemQuantity", cartItem);
+      commit("incrementItemQuantity", { product });
     }
   },
 };
 
 // mutations
 const mutations = {
-  pushProductToCart(state, { id }) {
+  pushProductToCart(state, { id, quantity }) {
     state.items.push({
       id,
-      quantity: 1,
+      quantity: quantity,
     });
   },
 
-  incrementItemQuantity(state, { id }) {
-    const cartItem = state.items.find((item) => item.id === id);
-    cartItem.quantity++;
+  incrementItemQuantity(state, { product }) {
+    const cartItem = state.items.find((item) => item.id === product.id);
+    cartItem.quantity += product.quantity;
   },
 
   setCartItems(state, { items }) {

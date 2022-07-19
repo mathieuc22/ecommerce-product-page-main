@@ -4,12 +4,26 @@
         <h2 class="cart__title">Cart</h2>
         <div class="cart__content">
             <p>Your cart is empty.</p>
+        <ul>
+            <li v-for="product in products" :key="product.id">
+                {{ product.name }} - {{ product.price }} x {{ product.quantity }}
+            </li>
+        </ul>
         </div>
-
     </div>
 
 
 </template>
+
+<script setup>
+
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+
+const store = useStore()
+const products = computed(() => store.getters['cart/cartProducts'])
+
+</script>
 
 <style lang="scss" scoped>
 .cart {
