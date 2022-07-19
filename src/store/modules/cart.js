@@ -58,6 +58,14 @@ const actions = {
       commit("incrementItemQuantity", { product });
     }
   },
+
+  removeProductFromCart({ state, commit }, product) {
+    commit("setCheckoutStatus", null);
+    const cartItem = state.items.find((item) => item.id === product.id);
+    if (cartItem) {
+      commit("popProductFromCart", { product });
+    }
+  },
 };
 
 // mutations
@@ -67,6 +75,11 @@ const mutations = {
       id,
       quantity: quantity,
     });
+  },
+
+  popProductFromCart(state, { product }) {
+    const cartItem = state.items.filter((item) => item.id !== product.id);
+    state.items = cartItem;
   },
 
   incrementItemQuantity(state, { product }) {
