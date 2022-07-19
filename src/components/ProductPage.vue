@@ -9,10 +9,10 @@
         <h1 class="summary__name">{{ product.name }}</h1>
         <p class="summary__description">{{ product.description }}</p>
         <div class="price">
-          <div class="price__current">{{ product.price.current }}
+          <div class="price__current">{{ currency(product.price.current) }}
             <span class="discount">50%</span>
           </div>
-          <div class="price__was">{{ product.price.was }}</div>
+          <div class="price__was">{{ currency(product.price.was) }}</div>
         </div>
         <div class="row">
           <div class="quantity">
@@ -35,6 +35,7 @@
 <script setup>
 import { useStore } from 'vuex';
 import { ref } from 'vue';
+import { currency } from '../currency'
 import ImageGallery from './ImageGallery.vue';
 
 defineProps(['product'])
