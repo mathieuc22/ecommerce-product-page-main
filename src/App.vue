@@ -6,38 +6,14 @@
 <script setup>
 import ProductPage from './components/ProductPage.vue';
 import AppHeader from './components/AppHeader.vue';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
-const product = {
-  brand: "Sneaker Company",
-  name: "Fall Limited Edition Sneakers",
-  description: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
-  price: {
-    current: "$125.00",
-    was: "$250.00"
-  },
-  photos: [
-    {
-      id: 0,
-      fullsize: "image-product-1.jpg",
-      thumbnail: "image-product-1-thumbnail.jpg"
-    },
-    {
-      id: 1,
-      fullsize: "image-product-2.jpg",
-      thumbnail: "image-product-2-thumbnail.jpg"
-    },
-    {
-      id: 2,
-      fullsize: "image-product-3.jpg",
-      thumbnail: "image-product-3-thumbnail.jpg"
-    },
-    {
-      id: 3,
-      fullsize: "image-product-4.jpg",
-      thumbnail: "image-product-4-thumbnail.jpg"
-    }
-  ]
-}
+const store = useStore()
+
+const product = computed(() => store.state.products.all[0])
+
+store.dispatch('products/getAllProducts')
 
 </script>
 

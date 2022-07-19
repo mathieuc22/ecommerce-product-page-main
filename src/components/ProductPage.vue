@@ -33,10 +33,13 @@
 </template>
 
 <script setup>
+import { useStore } from 'vuex';
 import { ref } from 'vue';
 import ImageGallery from './ImageGallery.vue';
 
 defineProps(['product'])
+
+const store = useStore()
 
 // reactive state
 const count = ref(0)
