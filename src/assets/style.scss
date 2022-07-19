@@ -57,3 +57,33 @@ body {
     max-width: 100%;
   }
 }
+
+.button {
+  width: 100%;
+  height: 56px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 700;
+  background-color: $color-primary-Orange;
+  color: $color-neutral-White;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 39px;
+  transition: all 0.2s ease-in-out;
+
+  & svg path {
+    fill: $color-neutral-White;
+  }
+
+  &:hover {
+    background-color: lighten($color: $color-primary-Orange, $amount: 20);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
