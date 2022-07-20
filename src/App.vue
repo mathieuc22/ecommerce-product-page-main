@@ -11,7 +11,7 @@ import { useStore } from 'vuex';
 
 const store = useStore()
 
-const product = computed(() => store.state.products.all[0])
+const product = computed(() => store.getters['products/getProductById'](0))
 
 store.dispatch('products/getAllProducts')
 
