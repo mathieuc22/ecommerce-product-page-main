@@ -23,5 +23,6 @@ store.dispatch('products/getAllProducts')
   font-size: $font-size-default;
   font-weight: $font-weight-default;
   position: relative;
+  width: 100%;
 }
 </style>

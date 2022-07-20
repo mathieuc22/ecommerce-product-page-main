@@ -46,7 +46,7 @@ const selected = ref(0)
     height: 100%;
     width: 100%;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     resize: horizontal;
     padding-top: 27px;

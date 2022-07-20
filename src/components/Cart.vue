@@ -52,6 +52,7 @@ const removeProductFromCart = (item) => store.dispatch('cart/removeProductFromCa
     height: 250px;
     width: 360px;
     position: absolute;
+    z-index: 99;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%) translateY(110%);

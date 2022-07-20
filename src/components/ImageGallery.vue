@@ -47,7 +47,7 @@ const lightbox = ref(false)
     justify-content: center;
     flex-direction: column;
     position: relative;
-    height: 61vh;
+    max-height: 61vh;
 
     & img {
       display: block;

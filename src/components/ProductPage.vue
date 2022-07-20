@@ -1,7 +1,7 @@
 <template>
   <div class="product">
     <div class="row">
-      <div class="col gallery">
+      <div class="col">
         <ImageGallery :photos="product.photos" />
       </div>
       <div class="col summary">
