@@ -78,7 +78,37 @@ img {
     margin-left: 2.3rem;
 
     @media screen and (max-width: 400px) {
-        display: none;
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        margin-left: unset;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    & .navlist {
+
+        @media screen and (max-width: 400px) {
+            flex-direction: column;
+            align-items: baseline;
+            justify-content: flex-start;
+            background-color: white;
+            width: 70%;
+            padding: 24px;
+            gap: 20px;
+        }
+
+        &__item {
+
+            @media screen and (max-width: 400px) {
+                height: unset;
+                font-size: 1.2em;
+                font-weight: 700;
+                color: $color-neutral-Black;
+            }
+        }
     }
 }
 
