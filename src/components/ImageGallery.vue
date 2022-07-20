@@ -33,13 +33,14 @@ const lightbox = ref(false)
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  gap: 20px;
+  gap: 3.333vh;
   height: 100%;
   width: auto;
 
   & img {
     display: block;
+    height: 100%;
+    width: 100%;
   }
 
   &__image {
@@ -51,8 +52,6 @@ const lightbox = ref(false)
 
     & img {
       display: block;
-      height: 100%;
-      width: 100%;
       object-fit: contain;
       border-radius: 10px;
     }

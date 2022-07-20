@@ -49,7 +49,6 @@ const selected = ref(0)
     align-items: center;
     justify-content: center;
     resize: horizontal;
-    padding-top: 27px;
 }
 
 .btn {

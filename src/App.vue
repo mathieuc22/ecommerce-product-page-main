@@ -23,6 +23,9 @@ store.dispatch('products/getAllProducts')
   font-size: $font-size-default;
   font-weight: $font-weight-default;
   position: relative;
+  height: 100%;
   width: 100%;
+  max-width: 1110px;
+  margin: 0 11.45%;
 }
 </style>

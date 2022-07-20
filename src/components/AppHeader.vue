@@ -1,5 +1,5 @@
 <template>
-    <header class="row">
+    <header>
         <img class="logo" alt="Sneakers logo" src="../assets/logo.svg" />
         <div class="hamburger">
             <div class="hamburger__line"></div>
@@ -51,12 +51,13 @@ const cart = ref(false)
 
 <style lang="scss" scoped>
 header {
-    height: 112px;
+    height: 113px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: $color-neutral-Dark-grayish-blue;
     border-bottom: 1px solid $color-neutral-Grayish-blue;
+    padding-bottom: 6px;
 
     @media screen and (max-width: 400px) {
         padding: 40px 25px;
@@ -129,8 +130,8 @@ header {
 }
 
 .avatar {
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     border: 2.5px solid transparent;
     margin-left: 10px;
@@ -164,7 +165,7 @@ header {
         width: 100%;
         transform: scaleY(0) translateX(-50%);
         height: 4px;
-        bottom: 0;
+        bottom: -6px;
         left: 50%;
         background-color: $color-primary-Orange;
         transition: all 0.2s ease-in-out;

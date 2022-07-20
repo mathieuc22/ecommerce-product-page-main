@@ -5,7 +5,7 @@
 // Colors
 
 // Primary
-$color-primary-Orange: hsl(26, 100%, 55%);
+$color-primary-Orange: #ff7d1a;
 $color-primary-Pale-orange: hsl(25, 100%, 94%);
 
 // Neutral
@@ -34,7 +34,7 @@ $font-family-default: "Kumbh Sans", sans-serif;
 html,
 body {
   width: 100%;
-  margin: auto;
+  height: 100%;
   color: $color-neutral-Black;
   background: $color-neutral-White;
   position: relative;
@@ -44,30 +44,30 @@ body {
 
 // components
 
-.row {
-  max-width: 1110px;
-  margin: auto;
-  margin: 0 11.45%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
+// .row {
+//   max-width: 1110px;
+//   margin: auto;
+//   margin: 0 11.45%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   gap: 20px;
+// }
 
-.col {
-  flex: 1;
-  padding: 47px 47px 0 47px;
-  & img {
-    max-width: 100%;
-  }
-}
+// .col {
+//   flex: 1;
+//   padding: 47px 47px 0 47px;
+//   & img {
+//     max-width: 100%;
+//   }
+// }
 
 .button {
   width: 100%;
   height: 56px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 0.98em;
   font-weight: 700;
   background-color: $color-primary-Orange;
   color: $color-neutral-White;
@@ -76,8 +76,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 18px;
   padding: 9px 39px;
   transition: all 0.2s ease-in-out;
+
+  &--box-shadow {
+    box-shadow: 0px 15px 30px 0px rgba(255,125,26,0.3);
+  }
 
   & svg path {
     fill: $color-neutral-White;
