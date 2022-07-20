@@ -4,15 +4,15 @@
     <div class="modal">
         <div class="gallery">
             <div class="gallery__image">
-                <button class="button button--close" @click="$emit('close')">
+                <button class="btn btn--close" @click="$emit('close')">
                     <svg width="24" height="24" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>
                 </button>
                 <img :src="`img/${photos[selected].fullsize}`" alt="Product image">
-                <button class="button button--round button--prev"
+                <button class="btn btn--round btn--prev"
                     @click="selected > 0 ? selected-- : selected = photos.length - 1">
                     <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
                 </button>
-                <button class="button button--round button--next"
+                <button class="btn btn--round btn--next"
                     @click="selected < photos.length - 1 ? selected++ : selected = 0">
                     <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
                 </button>
@@ -52,7 +52,7 @@ const selected = ref(0)
     padding-top: 27px;
 }
 
-.button {
+.btn {
     position: absolute;
     cursor: pointer;
     border: none;
