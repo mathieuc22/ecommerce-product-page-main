@@ -3,6 +3,12 @@
   <div class="gallery">
     <div @click="lightbox = true" class="gallery__image">
       <img :src="`img/${photos[selected].fullsize}`" alt="Product image">
+      <button class="btn btn--round btn--prev" @click="selected > 0 ? selected-- : selected = photos.length - 1">
+        <img src="src/assets/images/icon-previous.svg" alt="icon previous">
+      </button>
+      <button class="btn btn--round btn--next" @click="selected < photos.length - 1 ? selected++ : selected = 0">
+        <img src="src/assets/images/icon-next.svg" alt="icon next">
+      </button>
     </div>
     <ul class="gallery__thumbnails">
       <li v-for="(photo, index) in photos" :key="index" class="gallery__thumbnail" @click="selected = index"
@@ -37,6 +43,10 @@ const lightbox = ref(false)
   height: 100%;
   width: auto;
 
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
+
   & img {
     display: block;
     height: 100%;
@@ -50,10 +60,19 @@ const lightbox = ref(false)
     position: relative;
     max-height: 61vh;
 
+    @media screen and (max-width: 400px) {
+      height: 300px;
+      width: 100%;
+    }
+
     & img {
       display: block;
-      object-fit: contain;
+      object-fit: cover;
       border-radius: 10px;
+
+      @media screen and (max-width: 400px) {
+        border-radius: unset;
+      }
     }
   }
 
@@ -63,6 +82,10 @@ const lightbox = ref(false)
     justify-content: space-between;
     align-items: center;
     width: 445px;
+
+    @media screen and (max-width: 400px) {
+      display: none;
+    }
   }
 
   &__thumbnail {
@@ -82,5 +105,51 @@ const lightbox = ref(false)
   & img {
     filter: opacity(0.3);
   }
+}
+
+
+.btn {
+    position: absolute;
+    cursor: pointer;
+    border: none;
+    background: none;
+    display: flex;
+    width: 9px;
+    height: 14px;
+
+    &--round {
+        &::before {
+            content: '';
+            display: inline-block;
+            background-color: $color-neutral-White;
+            border-radius: 50%;
+            height: 39px;
+            width: 39px;
+            position: absolute;
+            z-index: -1;
+        }
+
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &--prev {
+        left: 36px;
+        transform: translateX(-50%);
+
+        &:hover svg path {
+            stroke: $color-primary-Orange;
+        }
+    }
+
+    &--next {
+        right: 36px;
+        transform: translateX(50%);
+
+        &:hover svg path {
+            stroke: $color-primary-Orange;
+        }
+    }
 }
 </style>

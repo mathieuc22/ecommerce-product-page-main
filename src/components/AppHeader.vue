@@ -1,11 +1,9 @@
 <template>
     <header>
-        <img class="logo" alt="Sneakers logo" src="../assets/logo.svg" />
         <div class="hamburger">
-            <div class="hamburger__line"></div>
-            <div class="hamburger__line"></div>
-            <div class="hamburger__line"></div>
+            <img src="src/assets/images/icon-menu.svg" alt="hamburger menu">
         </div>
+        <img class="logo" alt="Sneakers logo" src="../assets/logo.svg" />
         <nav class="navigation">
             <ul class="navlist">
                 <li class="navlist__item hover-underline">Collections</li>
@@ -60,12 +58,19 @@ header {
     padding-bottom: 6px;
 
     @media screen and (max-width: 400px) {
-        padding: 40px 25px;
+        height: 67px;
+        border-bottom: none;
+        padding-bottom: none;
+        padding: 0 24px;
     }
 
     p {
         margin-left: 1rem;
     }
+}
+
+img {
+    display: block;
 }
 
 .navigation {
@@ -79,10 +84,6 @@ header {
 
 .authentication {
     margin-left: auto;
-
-    @media screen and (max-width: 400px) {
-        display: none;
-    }
 }
 
 .navlist {
@@ -92,6 +93,10 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 2.1rem;
+
+    @media screen and (max-width: 400px) {
+        gap: 0.5rem;
+    }
 
     &__cart {
         position: relative;
@@ -126,7 +131,6 @@ header {
     width: 17px;
     border-radius: 15px;
     text-align: center;
-
 }
 
 .avatar {
@@ -135,6 +139,11 @@ header {
     border-radius: 50%;
     border: 2.5px solid transparent;
     margin-left: 10px;
+
+    @media screen and (max-width: 400px) {
+        width: 29px;
+        height: 29px;
+    }
 
     &:hover {
         border: 2.5px solid $color-primary-Orange;
@@ -145,15 +154,8 @@ header {
     display: none;
 
     @media screen and (max-width: 400px) {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    }
-
-    &__line {
-        width: 24px;
-        height: 3px;
-
+        display: block;
+        margin-right: 17px;
     }
 }
 

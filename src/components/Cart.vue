@@ -61,6 +61,12 @@ const removeProductFromCart = (item) => store.dispatch('cart/removeProductFromCa
     box-shadow: 0px 20px 30px 0px rgb(0 0 0 / 20%);
     cursor: initial;
 
+    @media screen and (max-width: 400px) {
+        position: fixed;
+        top: 76px;
+        transform: translateX(-50%);
+    }
+
     &__title {
         font-size: 1em;
         color: $color-neutral-Black;

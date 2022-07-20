@@ -66,17 +66,30 @@ function decrement() {
   width: 100%;
   display: flex;
   padding-top: 10vh;
+
+  @media screen and (max-width: 400px) {
+    padding-top: unset;
+    flex-direction: column;
+  }
 }
 
 .col {
   padding: 0 47px;
+
+  @media screen and (max-width: 400px) {
+    padding: unset;
+    width: 100%;
+  }
 }
 
 .summary {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media screen and (max-width: 400px) {
+    padding: 20px;
+  }
 
   &__brand {
     color: $color-primary-Orange;
@@ -85,6 +98,10 @@ function decrement() {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 400px) {
+      margin-bottom: 10px;
+    }
   }
 
   &__name {
@@ -92,17 +109,32 @@ function decrement() {
     font-weight: 700;
     line-height: 1.1em;
     margin-bottom: 30px;
+
+    @media screen and (max-width: 400px) {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
   }
 
   &__description {
     color: $color-neutral-Dark-grayish-blue;
     line-height: 1.6em;
     margin-bottom: 37px;
+
+    @media screen and (max-width: 400px) {
+      margin-bottom: 30px;
+    }
   }
 }
 
 .price {
   margin-bottom: 33px;
+
+  @media screen and (max-width: 400px) {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
 
   &__current {
     font-size: 1.6em;
@@ -125,6 +157,12 @@ function decrement() {
   max-width: 445px;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 400px) {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
 }
 
 .discount {
@@ -152,6 +190,10 @@ function decrement() {
   align-items: center;
   user-select: none;
 
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
+
   &>* {
     flex: 1;
     height: 100%;
@@ -167,5 +209,9 @@ function decrement() {
 
 .cart {
   width: 61.5%;
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
 }
 </style>
