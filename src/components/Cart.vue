@@ -16,7 +16,7 @@
                             {{ product.name }}
                         </p>
                         <p>
-                            {{ currency(product.price) }} x {{ product.quantity }} <span class="total">{{ currency(total) }}</span>
+                            {{ currency(product.price) }} x {{ product.quantity }} <span class="total">{{ currency(product.price * product.quantity) }}</span>
                         </p>
                     </div>
                     <div class="cart-item__delete" @click="removeProductFromCart( product )">
@@ -43,7 +43,6 @@ import { currency } from '../currency'
 
 const store = useStore()
 const products = computed(() => store.getters['cart/cartProducts'])
-const total = computed(() => store.getters['cart/cartTotalPrice'])
 const removeProductFromCart = (item) => store.dispatch('cart/removeProductFromCart', item)
 
 </script>

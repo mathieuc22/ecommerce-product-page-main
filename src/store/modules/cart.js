@@ -29,6 +29,12 @@ const getters = {
       return total + product.price * product.quantity;
     }, 0);
   },
+
+  cartTotalQuantity: (state, getters) => {
+    return getters.cartProducts.reduce((total, product) => {
+      return total + product.quantity;
+    }, 0);
+  },
 };
 
 // actions
@@ -53,7 +59,10 @@ const actions = {
     commit("setCheckoutStatus", null);
     const cartItem = state.items.find((item) => item.id === product.id);
     if (!cartItem) {
-      commit("pushProductToCart", { id: product.id, quantity: product.quantity });
+      commit("pushProductToCart", {
+        id: product.id,
+        quantity: product.quantity,
+      });
     } else {
       commit("incrementItemQuantity", { product });
     }
