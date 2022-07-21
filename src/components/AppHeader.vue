@@ -59,7 +59,7 @@ header {
     border-bottom: 1px solid $color-neutral-Grayish-blue;
     padding-bottom: 6px;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: $mq-max-width) {
         height: 67px;
         border-bottom: none;
         padding-bottom: none;
@@ -82,7 +82,7 @@ img {
     left: 24px;
     z-index: 999;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: $mq-max-width) {
         display: block;
     }
 }
@@ -91,7 +91,7 @@ img {
     height: 100%;
     margin-left: 2.3rem;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: $mq-max-width) {
         display: none;
     }
 
@@ -110,7 +110,7 @@ img {
 
     & .navlist {
 
-        @media screen and (max-width: 400px) {
+        @media screen and (max-width: $mq-max-width) {
             flex-direction: column;
             align-items: baseline;
             justify-content: flex-start;
@@ -125,7 +125,7 @@ img {
 
         &__item {
 
-            @media screen and (max-width: 400px) {
+            @media screen and (max-width: $mq-max-width) {
                 height: unset;
                 font-size: 1.2em;
                 font-weight: 700;
@@ -147,7 +147,7 @@ img {
     justify-content: space-between;
     gap: 2.1rem;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: $mq-max-width) {
         gap: 0.5rem;
     }
 
@@ -193,7 +193,7 @@ img {
     border: 2.5px solid transparent;
     margin-left: 10px;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: $mq-max-width) {
         width: 29px;
         height: 29px;
     }
@@ -206,7 +206,7 @@ img {
 .hamburger {
     display: none;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: $mq-max-width) {
         display: block;
         margin-right: 17px;
     }

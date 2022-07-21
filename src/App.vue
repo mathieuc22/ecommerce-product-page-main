@@ -28,7 +28,7 @@ store.dispatch('products/getAllProducts')
   max-width: 1110px;
   margin: 0 11.45%;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: $mq-max-width) {
     margin: unset;
     font-size: 15px;
   }

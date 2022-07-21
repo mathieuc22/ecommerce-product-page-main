@@ -61,10 +61,12 @@ const removeProductFromCart = (item) => store.dispatch('cart/removeProductFromCa
     box-shadow: 0px 20px 30px 0px rgb(0 0 0 / 20%);
     cursor: initial;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: $mq-max-width) {
         position: fixed;
         top: 76px;
         transform: translateX(-50%);
+        width: 100%;
+        max-width: 360px;
     }
 
     &__title {

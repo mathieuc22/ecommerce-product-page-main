@@ -43,7 +43,7 @@ const lightbox = ref(false)
   height: 100%;
   width: auto;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: $mq-max-width) {
     width: 100%;
   }
 
@@ -60,7 +60,7 @@ const lightbox = ref(false)
     position: relative;
     max-height: 61vh;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: $mq-max-width) {
       height: 300px;
       width: 100%;
     }
@@ -68,9 +68,10 @@ const lightbox = ref(false)
     & img {
       display: block;
       object-fit: cover;
+      object-position: top;
       border-radius: 10px;
 
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: $mq-max-width) {
         border-radius: unset;
       }
     }
@@ -83,7 +84,7 @@ const lightbox = ref(false)
     align-items: center;
     width: 445px;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: $mq-max-width) {
       display: none;
     }
   }
@@ -109,47 +110,51 @@ const lightbox = ref(false)
 
 
 .btn {
-    position: absolute;
-    cursor: pointer;
-    border: none;
-    background: none;
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 9px;
+  height: 14px;
+
+  @media screen and (max-width: $mq-max-width) {
     display: flex;
-    width: 9px;
-    height: 14px;
+  }
 
-    &--round {
-        &::before {
-            content: '';
-            display: inline-block;
-            background-color: $color-neutral-White;
-            border-radius: 50%;
-            height: 39px;
-            width: 39px;
-            position: absolute;
-            z-index: -1;
-        }
-
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
+  &--round {
+    &::before {
+      content: '';
+      display: inline-block;
+      background-color: $color-neutral-White;
+      border-radius: 50%;
+      height: 39px;
+      width: 39px;
+      position: absolute;
+      z-index: -1;
     }
 
-    &--prev {
-        left: 36px;
-        transform: translateX(-50%);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+  }
 
-        &:hover svg path {
-            stroke: $color-primary-Orange;
-        }
+  &--prev {
+    left: 36px;
+    transform: translateX(-50%);
+
+    &:hover svg path {
+      stroke: $color-primary-Orange;
     }
+  }
 
-    &--next {
-        right: 36px;
-        transform: translateX(50%);
+  &--next {
+    right: 36px;
+    transform: translateX(50%);
 
-        &:hover svg path {
-            stroke: $color-primary-Orange;
-        }
+    &:hover svg path {
+      stroke: $color-primary-Orange;
     }
+  }
 }
 </style>
