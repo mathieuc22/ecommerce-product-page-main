@@ -1,10 +1,11 @@
 <template>
     <header>
-        <div class="hamburger">
+        <div class="hamburger" @click="isMobileActive = true">
             <img src="src/assets/images/icon-menu.svg" alt="hamburger menu">
         </div>
         <img class="logo" alt="Sneakers logo" src="../assets/logo.svg" />
-        <nav class="navigation">
+        <nav class="navigation" :class="{ 'navigation--mobile': isMobileActive }">
+            <img class="close" alt="icon close" src="src/assets/images/icon-close.svg" @click="isMobileActive = false" />
             <ul class="navlist">
                 <li class="navlist__item hover-underline">Collections</li>
                 <li class="navlist__item hover-underline">Men</li>
@@ -44,6 +45,7 @@ const store = useStore()
 const shoppingCartQuantity = computed(() => store.getters['cart/cartTotalQuantity'])
 
 const cart = ref(false)
+const isMobileActive = ref(false)
 
 </script>
 
@@ -73,11 +75,28 @@ img {
     display: block;
 }
 
+.close {
+    display: none;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 999;
+
+    @media screen and (max-width: 400px) {
+        display: block;
+    }
+}
+
 .navigation {
     height: 100%;
     margin-left: 2.3rem;
 
     @media screen and (max-width: 400px) {
+        display: none;
+    }
+
+    &--mobile {
+        display: block;
         z-index: 999;
         position: fixed;
         top: 0;
@@ -86,6 +105,7 @@ img {
         width: 100%;
         margin-left: unset;
         background: rgba(0, 0, 0, 0.7);
+        animation: fade-in 0.2s;
     }
 
     & .navlist {
@@ -95,9 +115,12 @@ img {
             align-items: baseline;
             justify-content: flex-start;
             background-color: white;
-            width: 70%;
-            padding: 24px;
-            gap: 20px;
+            width: 66%;
+            padding-left: 24px;
+            padding-top: 95px;
+            gap: 23px;
+            transform: translateX(-100%);
+            animation: slide-in 0.4s 0.2s forwards;
         }
 
         &__item {
