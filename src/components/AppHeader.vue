@@ -5,7 +5,7 @@
         </div>
         <img class="logo" alt="Sneakers logo" src="../assets/logo.svg" />
         <nav class="navigation" :class="{ 'navigation--mobile': isMobileActive }">
-            <img class="close" alt="icon close" src="src/assets/images/icon-close.svg" @click="isMobileActive = false" />
+            <img class="close" alt="icon close" src="../assets/images/icon-close.svg" @click="isMobileActive = false" />
             <ul class="navlist">
                 <li class="navlist__item hover-underline">Collections</li>
                 <li class="navlist__item hover-underline">Men</li>
