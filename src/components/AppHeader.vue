@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="hamburger" @click="isMobileActive = true">
-            <img src="src/assets/images/icon-menu.svg" alt="hamburger menu">
+            <img src="../assets/images/icon-menu.svg" alt="hamburger menu">
         </div>
         <img class="logo" alt="Sneakers logo" src="../assets/logo.svg" />
         <nav class="navigation" :class="{ 'navigation--mobile': isMobileActive }">

@@ -4,10 +4,10 @@
     <div @click="lightbox = true" class="gallery__image">
       <img :src="`img/${photos[selected].fullsize}`" alt="Product image">
       <button class="btn btn--round btn--prev" @click="selected > 0 ? selected-- : selected = photos.length - 1">
-        <img src="src/assets/images/icon-previous.svg" alt="icon previous">
+        <img src="../assets/images/icon-previous.svg" alt="icon previous">
       </button>
       <button class="btn btn--round btn--next" @click="selected < photos.length - 1 ? selected++ : selected = 0">
-        <img src="src/assets/images/icon-next.svg" alt="icon next">
+        <img src="../assets/images/icon-next.svg" alt="icon next">
       </button>
     </div>
     <ul class="gallery__thumbnails">
