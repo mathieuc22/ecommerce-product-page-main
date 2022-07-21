@@ -96,6 +96,10 @@ const lightbox = ref(false)
     cursor: pointer;
     max-height: 92px;
     max-width: 92px;
+
+    &:hover {
+      filter: opacity(0.3);
+    }
   }
 
 }
