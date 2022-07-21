@@ -26,14 +26,14 @@ Users should be able to:
 - View the cart and remove items from it
 
 ### Screenshot
-<!-- 
-[<img src="./Screenshot_desktop.png" height="450px"/>](./Screenshot_desktop.png)
 
-[<img src="./Screenshot_hover.png" height="450px"/>](./Screenshot_hover.png)
+[<img src="./Screenshot_desktop.jpeg" height="450px"/>](./Screenshot_desktop.jpeg)
 
-[<img src="./Screenshot_thankyou.png" height="450px"/>](./Screenshot_thankyou.png)
+[<img src="./Screenshot_hover.jpeg" height="450px"/>](./Screenshot_hover.jpeg)
 
-[<img src="./Screenshot_mobile.png" height="450px"/>](./Screenshot_mobile.png) -->
+[<img src="./Screenshot_lightbox.jpeg" height="450px"/>](./Screenshot_lightbox.jpeg)
+
+[<img src="./Screenshot_mobile.png" height="450px"/>](./Screenshot_mobile.png)
 
 ### Links
 
